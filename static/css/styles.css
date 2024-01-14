@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    display: grid;
+    grid-template-rows: 1fr 10rem auto;
+    grid-template-areas: "main" "." "footer";
+    overflow-x: hidden;
+    background: #11111B;
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    margin: 0;
+    color: white;
+    --headings: #bb9af7;
+}
+
+.bubbles {
+    width: 100%;
+    align-self: end;
+}
+
+body .footer {
+    z-index: 1;
+    --footer-background: #ED5565;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+}
+
+body .footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+}
+
+body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+}
+
+.dacover {
+    background-color: var(--footer-background);
+    height: 100%;
+    align-self: end;
+    z-index: 2;
+    color: white;
+    display: grid;
+    font-family: monospace;
+    grid-template-columns: 3fr 1fr;
+    line-height: .3rem;
+}
+
+.dacover .stats {
+    font-weight: 800;
+}
+
+.dacover .left .bold,
+.dacover .right {
+    font-weight: 800;
+}
+
+.dacover .left,
+.dacover .right {
+    padding: 1rem;
+    align-self: end;
+}
+
+.dacover .right {
+    place-self: end;
+}
+
+@-webkit-keyframes bubble-size {
+
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-size {
+
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@-webkit-keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+
+.master-container {
+    /* position: fixed; */
+    /* height: 100vh; */
+    display: grid;
+    place-items: center;
+}
+
+.datetime {
+    text-align: center;
+    line-height: 0%;
+    color: var(--headings);
+    overflow: hidden;
+}
+
+.datetime #day {
+    font-family: 'Monoton', sans-serif;
+    font-size: 6rem;
+    font-weight: 100;
+}
+
+.datetime #time {
+    font-size: 5.5rem;
+    font-family: 'Raleway Dots', sans-serif;
+    translate: 0rem -3rem;
+}
+
+.datetime #greetings {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
+    translate: 0rem -2rem;
+}
+
+
+
+.input-field {
+    width: 50%;
+    /* max-width: 500px; */
+
+    padding: .7rem;
+    border-radius: .7rem;
+
+    border: 1px solid white;
+    box-shadow: none;
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: 30;
+    opacity: 20%;
+    transition: all ease-in-out 15ms;
+}
+
+.input-field.active {
+    border: none;
+    box-shadow: 0rem 0rem 1rem 0.1rem #ED5565;
+    opacity: 100%;
+    transition: all ease-in-out 15ms;
+}
+
+/* weather part */
+.weather-card {
+    display: grid;
+    padding-bottom: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.weather-card .left-pane,
+.weather-card .right-pane {
+    display: grid;
+    width: 320px;
+    background: linear-gradient( 135deg, #5d27fec0 10%, #c165ddd6 100%);
+    padding: 1rem;
+    border-radius: .7rem;
+}
+
+.weather-card .right-pane {
+    background: #1c2025;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding-top: 2rem;
+    translate: 0rem -1rem;
+    z-index: -1;
+}
+
+.weather-card .right-pane .section1 > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.weather-card .right-pane .section1 > div span + span {
+    text-align: right;
+    font-weight: 300;
+}
+
+/* .weather-card .right-pane .future-predictions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+.weather-card .right-pane .future-predictions > div {
+    background-color: #333C49;
+    padding: 1rem;
+    border-radius: .7rem;
+} */
+
+
+.areaName {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.region, .country, .desc, .temp_base {
+    font-weight: 300;
+}
+
+.temp {
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.invisible {
+    display: none;
+}
+
+@media (max-width: 609px) {
+    .dacover {
+        line-height: .9rem;
+    }
+
+    .datetime #day {
+        font-family: 'Monoton', sans-serif;
+        font-size: 4rem;
+        font-weight: 100;
+    }
+
+    .datetime #time {
+        translate: 0rem -1rem;
+    }
+
+    .input-field {
+        width: 50%;
+    }
+}

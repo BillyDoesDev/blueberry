@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueberry</title>
+    <script src="{{ url_for('static', filename='socket.io.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script defer src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+
+<body>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="{{ url_for('static', filename='socket.io.js') }}"></script> -->
+
+    <div class="master-container">
+        <div class="datetime">
+            <h4 id="day">Monday</h4>
+            <p id="time"></p>
+            <p id="greetings">Greetings!</p>
+        </div>
+        <script>
+            var day = document.getElementById("day");
+            const d = new Date();
+            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let getday = weekday[d.getDay()];
+            day.innerHTML = getday;
+            var time = document.getElementById("time");
+
+            let CURRENT_ALARMS = [];
+            // socket.on('alarm-response', (data) => {
+            //     let CURRENT_ALARMS = data.alarms;
+            //     console.log(data);
+            // });
+
+            setInterval(function () {
+                time.innerHTML = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+
+                // get the data first, fetch only when new alarm is set
+                curr_time = (new Date()).toLocaleTimeString();
+                if (CURRENT_ALARMS.includes(curr_time)) {
+                    // play the alarm
+                    console.log("<<<<<<<<<ALARM TIME!!!!>>>>>>>>>")
+                    socket.emit('alarm-modify', { "data": curr_time });
+                    document.querySelector('.alarm-element').play();
+                }
+
+            }, 1000);
+        </script>
+
+        <audio class="alarm-element" loop>
+            <source src="{{ url_for('static', filename='assets/Leapfrog.mp3') }}" type="audio/ogg">
+        </audio>
+
+
+        <div class="container invisible">
+
+            <div class="weather-card">
+                <div class="left-pane">
+                    <!-- <img src="static/assets/anothersiccpattern.svg" class="pattern"> -->
+                    <div class="info">
+
+                        <div class="areaName">Area</div>
+                        <div class="subArea">
+                            <span class="region">region</span>, <span class="country">country</span>
+                        </div>
+                        <div class="desc">clear</div>
+                        <div class="temp">69°C</div>
+                        <div class="temp_base">
+                            <span>Feels like </span><span class="feelslike">42°C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-pane">
+                    <div class="section1">
+                        <div>
+                            <span class="heading">Precipitation </span><span class="precipitation">0 mm</span>
+                        </div>
+                        <div>
+                            <span class="heading">Humidity </span><span class="humidity">0%</span>
+                        </div>
+                        <div>
+                            <span class="heading">Wind </span><span class="wind">0 km/h from 85° E</span>
+                        </div>
+                        <div>
+                            <span class="heading">Visibility </span><span class="visibility">0 km</span>
+                        </div>
+                    </div>
+                    <!-- <div class="future-predictions">
+                        <div class="day1">
+                            <div class="pred-date">01-01</div>
+                            <div class="pred-temp">12°C</div>
+                        </div>
+                        <div class="day2">
+                            <div class="pred-date">01-02</div>
+                            <div class="pred-temp">22°C</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+        <div class="input-field">say 'Blueberry'!</div>
+    </div>
+
+
+
+    <!-- footer styles here -->
+    <!-- all thanks to this awesome pen right here: https://codepen.io/z-/pen/zYxdRQy?editors=1010 -->
+    <div class="footer">
+
+        <div class="bubbles"></div>
+        <script>
+            const bubbles = document.querySelector(".bubbles");
+
+            for (let i = 0; i < 128; i++) {
+                let bubble = document.createElement("div");
+                bubble.className = "bubble";
+                bubble.style = `--size:${2 + Math.random() * 4}rem; --distance:${6 + Math.random() * 4}rem; --position:${-5 + Math.random() * 110}%; --time:${2 + Math.random() * 2}s; --delay:${-1 * (2 + Math.random() * 2)}s;`;
+                bubbles.appendChild(bubble);
+            }
+        </script>
+
+        <div class="dacover">
+            <div class="left">
+                <p class="stats">Stats for nerds.</p>
+                <p><span class="bold">Version: </span>0.0.1 beta</p>
+                <p><span class="bold">Tech Stack: </span>Vanilla(HTML/CSS/JS).concat(`SocketIO`) && Flask</p>
+                <p><span class="bold">Repo: </span>https://github.com/pretend_this_is_real.git</p>
+            </div>
+            <div class="right">AI Alchemists</div>
+        </div>
+
+    </div>
+    <svg style="position:fixed; top:100vh">
+        <defs>
+            <filter id="blob">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="blob"></feColorMatrix>
+            </filter>
+        </defs>
+    </svg>
+
+</body>
+
+</html>
