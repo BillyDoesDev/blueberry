@@ -29,6 +29,7 @@ const input_field = document.querySelector(".input-field");
 
 recognition.onresult = (event) => {
     const phrase = event.results[event.results.length - 1][0].transcript.toString().toLowerCase();
+    console.log(phrase)
 
     if (wake_word_encountered) {
 
@@ -100,6 +101,11 @@ recognition.onresult = (event) => {
             socket.on('alarm-response', (data) => {
                 CURRENT_ALARMS = data.alarms;
                 console.log(data);
+
+                if (CURRENT_ALARMS.length == 0)
+                    alarm_icon.classList.add("invisible");
+                else
+                    alarm_icon.classList.remove("invisible");
             });
         }
 

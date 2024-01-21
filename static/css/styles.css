@@ -138,6 +138,7 @@ body .footer .bubbles .bubble {
     /* height: 100vh; */
     display: grid;
     place-items: center;
+    /* width: 100vw; */
 }
 
 .datetime {
@@ -145,6 +146,10 @@ body .footer .bubbles .bubble {
     line-height: 0%;
     color: var(--headings);
     overflow: hidden;
+
+    width: 100%;
+    display: grid;
+    place-items: center;
 }
 
 .datetime #day {
@@ -153,11 +158,7 @@ body .footer .bubbles .bubble {
     font-weight: 100;
 }
 
-.datetime #time {
-    font-size: 5.5rem;
-    font-family: 'Raleway Dots', sans-serif;
-    translate: 0rem -3rem;
-}
+
 
 .datetime #greetings {
     font-family: 'Dosis', sans-serif;
@@ -166,6 +167,68 @@ body .footer .bubbles .bubble {
     translate: 0rem -2rem;
 }
 
+
+.digital-clock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* place-items: center; */
+    /* width: max-content; */
+    /* width: fit-content; */
+}
+
+.datetime #time {
+    font-size: 5.5rem;
+    font-family: 'Raleway Dots', sans-serif;
+    translate: 0rem -3rem;
+
+    /* place-self: end; */
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+    grid-row-start: 1;
+}
+
+.alarm-icon {
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+    grid-row-start: 1;
+    justify-self: end;
+
+    translate: 2rem -.5rem;
+    fill: var(--headings);
+
+}
+
+.dismiss-alarm {
+    color: #ED5565;
+    cursor: pointer;
+    border: 1px solid;
+    background: none;
+    translate: 0rem -3.7rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    font-size: medium;
+    border-radius: 2rem;
+    min-width: 2rem;
+
+    transition: all ease-in-out 15ms;
+    animation: glowing 1500ms infinite;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #ED5565;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ED5565;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #ED5565;
+    }
+}
 
 
 .input-field {
@@ -202,7 +265,7 @@ body .footer .bubbles .bubble {
 .weather-card .right-pane {
     display: grid;
     width: 320px;
-    background: linear-gradient( 135deg, #5d27fec0 10%, #c165ddd6 100%);
+    background: linear-gradient(135deg, #5d27fec0 10%, #c165ddd6 100%);
     padding: 1rem;
     border-radius: .7rem;
 }
@@ -216,14 +279,14 @@ body .footer .bubbles .bubble {
     z-index: -1;
 }
 
-.weather-card .right-pane .section1 > div {
+.weather-card .right-pane .section1>div {
     display: grid;
     grid-template-columns: 1fr 2fr;
     font-weight: 500;
     line-height: 1.5rem;
 }
 
-.weather-card .right-pane .section1 > div span + span {
+.weather-card .right-pane .section1>div span+span {
     text-align: right;
     font-weight: 300;
 }
@@ -246,7 +309,10 @@ body .footer .bubbles .bubble {
     font-size: 40px;
 }
 
-.region, .country, .desc, .temp_base {
+.region,
+.country,
+.desc,
+.temp_base {
     font-weight: 300;
 }
 
@@ -258,6 +324,7 @@ body .footer .bubbles .bubble {
 
 .invisible {
     display: none;
+    transition: all ease-in-out 15ms;
 }
 
 @media (max-width: 609px) {

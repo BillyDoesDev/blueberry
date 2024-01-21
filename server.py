@@ -16,16 +16,16 @@ def handle_my_custom_event(json):
     print('received json: ' + str(json))
 
 
-@app.route('/alarms')
-def alarms():
-    @after_this_request
-    def add_header(response):
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        return response
+# @app.route('/alarms')
+# def alarms():
+#     @after_this_request
+#     def add_header(response):
+#         response.headers['Access-Control-Allow-Origin'] = '*'
+#         return response
     
-    with open("data/alarms.json", mode="r") as f:
-        data = json.load(f)
-        return data
+#     with open("data/alarms.json", mode="r") as f:
+#         data = json.load(f)
+#         return data
 
 
 @socketio.on('weather-request')
@@ -67,7 +67,7 @@ def alarm_set(json_data):
             emit('alarm-response', alarm_data)
     
 
-@socketio.on('alarm-modify')
+@socketio.on('alarm-modify') # this is for removing the alarm that finished ringing
 def alarm_modify(json_data):
     print(f"recieved: {json_data}") # {'data': '8:21:00 PM'}
     current_alarmaaaa = json_data['data']
@@ -80,6 +80,7 @@ def alarm_modify(json_data):
         current_alarms.remove(current_alarmaaaa)
         alarm_data["alarms"] = current_alarms
         json.dump(alarm_data, f, indent=4)
+        emit('alarm-response', alarm_data)
 
 
 if __name__ == '__main__':
