@@ -1,7 +1,7 @@
 ![bartowski.png](assets/bartowski.png)
 
 # 'Sup, Bartowski!
-WW
+this is a signed commit
 **Bartowski** */bAr-tow-ski/* is designed to be a virtual assistant, capable of doing the usual virtual assistant tasks, and more.
 eee
 
