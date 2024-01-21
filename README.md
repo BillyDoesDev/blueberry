@@ -3,7 +3,7 @@
 # 'Sup, Bartowski!
 
 **Bartowski** */bAr-tow-ski/* is designed to be a virtual assistant, capable of doing the usual virtual assistant tasks, and more.
-
+eee
 
 ### Approach
 The entire thing is designed to work on a client-server model. All the processing of the audio is done on a python backend, and the results and also the overall GUI interface is a web based one.
