@@ -1,5 +1,6 @@
 env/
-ass*
+ass.html
+ass.js
 rough/
 fancy.css
 .vscode/
