@@ -1,23 +1,23 @@
-![bartowski.png](assets/bartowski.png)
+![blueberry.svg](static/assets/blueberry.svg)
 
-# 'Sup, Bartowski!
+# Hello, Blueberry!
 
-**Bartowski** */bAr-tow-ski/* is designed to be a virtual assistant, capable of doing the usual virtual assistant tasks, and more.
-eee
+**Blueberry** is designed to be a virtual assistant, capable of doing the usual virtual assistant tasks, and more. 🫐
 
 ### Approach
 The entire thing is designed to work on a client-server model. All the processing of the audio is done on a python backend, and the results and also the overall GUI interface is a web based one.
 
-This works through a series of stages:
-- **Stage 1:** Audio data is streamed in real time from the client to the server using websockets.
-- **Stage 2:** Audio data is processed by a Speech-to-Text library/framework, to get the relevant data in text form.
-- **Stage 3:** Our custom AI model analyses the text and triggers an appropriate function accordingly. (This could be a web search, weather information lookup, etc.)
-- **Stage 4:** The result of the function is converted to audio using a Text-to-Speech library/framework.
-- **Stage 5:** The audio is emitted to the client in real time again, using websockets. 
+
+**This works through a series of stages:**
+- **Stage 1:** Audio data is processed in real time `on the client side`, suing the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
+- **Stage 2:** The transcribed text data is then parsed for the `wake-word` and on detection, is stremed to the `python server` in real time, for further processing using websockets.
+- **Stage 3:** Our backend analyses the text and triggers an appropriate function accordingly. (This could be a web search, weather information lookup, etc.)
+- **Stage 4:** The result of the function is emitted to the client in real time.
+- **Stage 5:** An audio output is generated on the frontend using the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
 
 
-### Setup and Implementation details
-> Everything here is subject to change.
+### Setup Instructions
+
 
 Clone the repository and `cd` into the appropriate directory
 ```shell
@@ -32,15 +32,20 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-Start the backend server using `python server.py` and follow the generated URL to get to the frontend.
+Start the backend server using and follow the generated URL to get to the frontend.
 
-> ***NOTE:*** 
-> - The current implementation uses a `Flask` server as the backend, using websockets for real time inteactions. There is the possibility of switching over to `aiohttp` later on, in case of increased complexities.
-> - The current implementation uses **CMUSphinx** for offline speech to text. This might require the installation of the [pocketsphinx](https://cmusphinx.github.io/wiki/download/) packagae.
-> - There is the option to switch over to [Google Cloud Speech-to-Text](https://cloud.google.com/speech-to-text/v2/docs/streaming-recognize). (More references [here](https://github.com/saharmor/realtime-transcription-playground/blob/main/backend/demo_web_app.py)) However, this runs the drawback of having the need to always be online.
->> **Supported audio file types when using SpeechRecognition along with pocketsphinx are, as of now:**
->> - WAV: must be in PCM/LPCM format
->> - AIFF
->> - AIFF-C
->> - FLAC: must be native FLAC format; OGG-FLAC is not supported
->> </br></br> If you are working on x-86 based Linux, macOS or Windows, you should be able to work with FLAC files without a problem. On other platforms, you will need to install a FLAC encoder and ensure you have access to the flac command line tool. You can find more information [here](https://xiph.org/flac/) if this applies to you.
+```shell
+python server.py
+```
+
+#### Stuff Worth Noting
+> The above implementation is cross-platform, thanks to the fact that it relies on a browser based frontend. That being said, however, the **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is currently only supported in chromium based browsers**, and this project, as a result, is heavily experimental. Expect minor glitches.</br></br>
+>```shell
+>#Logs for nerds: [Development Environment]
+>$ python --version
+>Python 3.11.5
+>```
+>```shell
+>$ uname -a    
+>Linux billy 6.6.10-arch1-1 #1 SMP PREEMPT_DYNAMIC Fri, 05 Jan 2024 16:20:41 +0000 x86_64 GNU/Linux
+>```
