@@ -35,7 +35,11 @@ recognition.onresult = (event) => {
 
         const CONTAINER = document.querySelector(".container");
 
-        // input_field.classList.toggle("active");
+        // clear all previous operations
+        for (let i = 0; i < CONTAINER.children.length; i++) {
+            CONTAINER.children[i].classList.add("invisible");
+        }
+
         input_field.textContent = phrase;
         // process the instruction here
 
@@ -80,7 +84,7 @@ recognition.onresult = (event) => {
                     document.querySelector(".visibility").textContent = visibility;
                     document.querySelector(".wind").textContent = wind;
 
-                    CONTAINER.classList.toggle("invisible")
+                    document.querySelector(".weather-card").classList.remove("invisible")
                     input_field.classList.remove("active");
                     input_field.textContent = "say 'Blueberry'!";
                 }
@@ -126,13 +130,3 @@ recognition.onresult = (event) => {
         input_field.textContent = "listening...";
     }
 };
-
-// recognition.onspeechend = async () => {
-//     console.log("Speech has stopped being detected...");
-
-//     // console.log("recieved so far: " + instruction);
-
-//     await new Promise(r => setTimeout(r, 2000));
-//     console.log("restarting...");
-//     recognition.start();
-// };

@@ -1,6 +1,4 @@
 .to-do-list-container {
-    /* width: fit-content; */
-    /* padding: 10px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,10 +6,8 @@
 }
 
 .todo-app {
-    /* width: 100%; */
     max-width: 540px;
     background-color: #1c2025;
-    /* padding: 40px 30px 70px; */
     padding: 1.1rem;
     border-radius: 10px;
     display: flex;
@@ -125,4 +121,9 @@
     color: #ED5565;
     font-size: 18px;
     transition: all .2s ease;
+}
+
+
+.invisible {
+    display: none;
 }

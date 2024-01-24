@@ -20,68 +20,68 @@ body {
 }
 
 .bubbles {
-    width: 100%;
-    align-self: end;
+    width: 100% !important;
+    align-self: end !important;
 }
 
 body .footer {
-    z-index: 1;
-    --footer-background: #ED5565;
-    display: grid;
-    position: relative;
-    grid-area: footer;
-    min-height: 12rem;
+    z-index: 1 !important;
+    --footer-background: #ED5565 !important;
+    display: grid !important;
+    position: relative !important;
+    grid-area: footer !important;
+    min-height: 12rem !important;
 }
 
 body .footer .bubbles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1rem;
-    background: var(--footer-background);
-    filter: url("#blob");
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1rem !important;
+    background: var(--footer-background) !important;
+    filter: url("#blob") !important;
 }
 
 body .footer .bubbles .bubble {
-    position: absolute;
-    left: var(--position, 50%);
-    background: var(--footer-background);
-    border-radius: 100%;
-    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-    transform: translate(-50%, 100%);
+    position: absolute !important;
+    left: var(--position, 50%) !important;
+    background: var(--footer-background) !important;
+    border-radius: 100% !important;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s) !important;
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s) !important;
+    transform: translate(-50%, 100%) !important;
 }
 
 .dacover {
-    background-color: var(--footer-background);
-    height: 100%;
-    align-self: end;
-    z-index: 2;
-    color: white;
-    display: grid;
-    font-family: monospace;
-    grid-template-columns: 3fr 1fr;
-    line-height: .3rem;
+    background-color: var(--footer-background) !important;
+    height: 100% !important;
+    align-self: end !important;
+    z-index: 2 !important;
+    color: white !important;
+    display: grid !important;
+    font-family: monospace !important;
+    grid-template-columns: 3fr 1fr !important;
+    line-height: .3rem !important;
 }
 
 .dacover .stats {
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 .dacover .left .bold,
 .dacover .right {
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 .dacover .left,
 .dacover .right {
-    padding: 1rem;
-    align-self: end;
+    padding: 1rem !important;
+    align-self: end !important;
 }
 
 .dacover .right {
-    place-self: end;
+    place-self: end !important;
 }
 
 @-webkit-keyframes bubble-size {
