@@ -18,27 +18,40 @@ The entire thing is designed to work on a client-server model. All the processin
 
 ### Setup Instructions
 
+**Dependencies:**
+- `python 3.11.*`
+- `git`
+- A chromium based browser.
 
 Clone the repository and `cd` into the appropriate directory
+
+**Unix:**
 ```shell
 git clone https://github.com/aisoc-internal-hackathon/aisoc_T9.git
 cd aisoc_T9
-```
 
-Set up a virtual python environment and install required dependencies
-```shell
+# activate python virtual env and install dependencies
 python -m venv env
 source env/bin/activate
-pip install -r requirements.txt
-```
 
-Start the backend server using and follow the generated URL to get to the frontend.
-
-```shell
+# run server and follow the generated URL to get to the frontend.
 python server.py
 ```
 
-#### Stuff Worth Noting
+**Windows:**
+```shell
+git clone https://github.com/aisoc-internal-hackathon/aisoc_T9.git
+cd aisoc_T9
+
+# activate python virtual env and install dependencies
+python -m venv env
+.\env\Scripts\activate
+
+# run server and follow the generated URL to get to the frontend.
+python server.py
+```
+
+### Disclaimer
 > The above implementation is cross-platform, thanks to the fact that it relies on a browser based frontend. That being said, however, the **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is currently only supported in chromium based browsers**, and this project, as a result, is heavily experimental. Expect minor glitches.</br></br>
 >```shell
 >#Logs for nerds: [Development Environment]
