@@ -113,6 +113,13 @@ recognition.onresult = (event) => {
             });
         }
 
+        else if (phrase.includes('to do list')) {
+            console.log("creating todolist")
+            input_field.classList.remove("active");
+            input_field.textContent = "say 'Blueberry'!";
+            document.querySelector(".to-do-list-container").classList.remove("invisible");
+        }
+
         else {
             // default case
             input_field.classList.remove("active");

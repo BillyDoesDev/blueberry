@@ -14,6 +14,33 @@
 </head>
 
 <body>
+    <style>
+        /* style scrollbar */
+        ::-webkit-scrollbar {
+            width: 2px;
+            height: 8px;
+            background-color: transparent;
+            /* or add it to the track */
+        }
+        ::-webkit-scrollbar:hover {
+            width: 4px;
+            height: 8px;
+            background-color: transparent;
+            /* or add it to the track */
+        }
+
+        /* Add a thumb */
+        ::-webkit-scrollbar-thumb {
+            background: #bb9af75b;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bb9af7;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+    </style>
 
     <div class="master-container">
         <div class="datetime">
