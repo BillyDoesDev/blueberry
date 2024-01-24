@@ -8,14 +8,12 @@
     <script src="{{ url_for('static', filename='socket.io.js') }}"></script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/todo_list_styles.css') }}">
     <script defer src="{{ url_for('static', filename='main.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='todo_list.js') }}"></script>
 </head>
 
 <body>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
-        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
-        crossorigin="anonymous"></script> -->
-    <!-- <script src="{{ url_for('static', filename='socket.io.js') }}"></script> -->
 
     <div class="master-container">
         <div class="datetime">
@@ -81,10 +79,10 @@
             <source src="{{ url_for('static', filename='assets/Leapfrog.mp3') }}" type="audio/ogg">
         </audio>
 
+        <!-- all content goes here -->
+        <div class="container">
 
-        <div class="container invisible">
-
-            <div class="weather-card">
+            <div class="weather-card invisible">
                 <div class="left-pane">
                     <!-- <img src="static/assets/anothersiccpattern.svg" class="pattern"> -->
                     <div class="info">
@@ -129,6 +127,21 @@
                 </div>
             </div>
 
+            <div class="to-do-list-container">
+                <div class="todo-app">
+                    <div class="todo-app-title">
+                        <h2>To-do list</h2>
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <div class="todo-row">
+                        <input type="text" class="todo-input-box" placeholder="add your tasks">
+                        <button class="add-tasks">Add</button>
+                    </div>
+                    <ul id="list-container">
+                    </ul>
+                </div>
+            </div>
+
         </div>
         <div class="input-field">say 'Blueberry'!</div>
     </div>
@@ -156,7 +169,7 @@
                 <p class="stats">Stats for nerds.</p>
                 <p><span class="bold">Version: </span>0.0.1 beta</p>
                 <p><span class="bold">Tech Stack: </span>Vanilla(HTML/CSS/JS).concat(`SocketIO`) && Flask</p>
-                <p><span class="bold">Repo: </span>https://github.com/pretend_this_is_real.git</p>
+                <p><span class="bold">Repo: </span>https://github.com/aisoc-internal-hackathon/aisoc_T9.git</p>
             </div>
             <div class="right">AI Alchemists</div>
         </div>

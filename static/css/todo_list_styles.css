@@ -1,0 +1,128 @@
+.to-do-list-container {
+    /* width: fit-content; */
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.todo-app {
+    /* width: 100%; */
+    max-width: 540px;
+    background-color: #1c2025;
+    /* padding: 40px 30px 70px; */
+    padding: 1.1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 2rem;
+}
+
+.todo-todo-app-title {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.todo-app-title h2,
+.todo-app-title i {
+    color: #BB9AF7;
+}
+
+.todo-app-title i {
+    font-size: 26px;
+}
+
+.todo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d4dbe2c4;
+    border-radius: 30px;
+}
+
+.todo-input-box {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 12px;
+    font-size: 17px;
+    padding-left: 20px;
+}
+
+.add-tasks {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 15px 50px;
+    border-radius: 30px;
+    background-color: #ED5565;
+    color: #d4dbe2;
+    font-size: 18px;
+    transition: all .25s ease;
+}
+
+.add-tasks:hover {
+    filter: brightness(1.2);
+}
+
+@media screen and (max-width: 400px) {
+    .add-tasks {
+        padding: 15px;
+        border-radius: 0 30px 30px 0;
+    }
+}
+
+#list-container {
+    list-style: none;
+}
+
+#list-container li {
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    margin-top: 5px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+
+    color: #d4dbe2;
+}
+
+#list-container li::before {
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    left: 0;
+    border: 2px solid #ED5565;
+}
+
+#list-container .checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+#list-container .checked::before {
+    background-color: #ED5565;
+    background-image: url("../assets/done.svg");
+}
+
+.todo-x {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ED5565;
+    font-size: 18px;
+    transition: all .2s ease;
+}
