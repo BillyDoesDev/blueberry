@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-/* body {
+body {
     display: grid;
     grid-template-rows: 1fr 10rem auto;
     grid-template-areas: "main" "." "footer";
@@ -130,8 +130,7 @@ body .footer .bubbles .bubble {
     100% {
         bottom: var(--distance, 10rem);
     }
-} */
-
+}
 
 .master-container {
     /* position: fixed; */
@@ -232,9 +231,7 @@ body .footer .bubbles .bubble {
 
 
 .input-field {
-    width: 50%;
-    /* max-width: 500px; */
-
+    width: 350px;
     padding: .7rem;
     border-radius: .7rem;
 
@@ -243,7 +240,7 @@ body .footer .bubbles .bubble {
     text-align: center;
     text-transform: lowercase;
     font-weight: 30;
-    opacity: 20%;
+    opacity: 30%;
     transition: all ease-in-out 15ms;
 }
 
@@ -290,18 +287,6 @@ body .footer .bubbles .bubble {
     text-align: right;
     font-weight: 300;
 }
-
-/* .weather-card .right-pane .future-predictions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-}
-
-.weather-card .right-pane .future-predictions > div {
-    background-color: #333C49;
-    padding: 1rem;
-    border-radius: .7rem;
-} */
 
 
 .areaName {

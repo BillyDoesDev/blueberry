@@ -120,10 +120,34 @@ recognition.onresult = (event) => {
             document.querySelector(".to-do-list-container").classList.remove("invisible");
         }
 
-        else {
-            // default case
+        else if (phrase.includes('creative mode')) {
+            console.log("entering creative mode...")
             input_field.classList.remove("active");
-            input_field.textContent = "sorry, didn't get ya :/";
+            input_field.textContent = "say 'Blueberry'!";
+
+            // right now, all divs inside container are invisible
+            document.querySelector(".file-container").classList.remove("invisible");
+        }
+
+        // else {
+        //     // default case
+        //     input_field.classList.remove("active");
+        //     input_field.textContent = "sorry, didn't get ya :/";
+        // }
+        else {
+            // futile attempt to try out freakin creative mode sheesh
+            socket.emit('creative-query', { data: phrase });
+
+            socket.on('creative-response', (data) => {
+                document.querySelector(".gererated-text").classList.add("invisible");
+                console.log(data);
+                document.querySelector(".woke-stuff").classList.remove('invisible');
+                document.querySelector(".woke-stuff").textContent = data.response;
+            });
+
+            input_field.classList.remove("active");
+            input_field.textContent = "say 'Blueberry'!";
+
         }
 
         wake_word_encountered = false;

@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/todo_list_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/file_upload.css') }}">
     <script defer src="{{ url_for('static', filename='main.js') }}"></script>
     <script defer src="{{ url_for('static', filename='todo_list.js') }}"></script>
 </head>
@@ -41,135 +42,6 @@
             background: #bb9af7;
             -webkit-border-radius: 10px;
             border-radius: 10px;
-        }
-
-        body {
-            display: grid;
-            grid-template-rows: 1fr 10rem auto;
-            grid-template-areas: "main" "." "footer";
-            overflow-x: hidden;
-            background: #11111B;
-            min-height: 100vh;
-            font-family: "Open Sans", sans-serif;
-            box-sizing: border-box;
-            padding: 0;
-            border: none;
-            margin: 0;
-            color: white;
-            --headings: #bb9af7;
-        }
-
-        .bubbles {
-            width: 100%;
-            align-self: end;
-        }
-
-        body .footer {
-            z-index: 1;
-            --footer-background: #ED5565;
-            display: grid;
-            position: relative;
-            grid-area: footer;
-            min-height: 12rem;
-        }
-
-        body .footer .bubbles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1rem;
-            background: var(--footer-background);
-            filter: url("#blob");
-        }
-
-        body .footer .bubbles .bubble {
-            position: absolute;
-            left: var(--position, 50%);
-            background: var(--footer-background);
-            border-radius: 100%;
-            -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-            animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-            transform: translate(-50%, 100%);
-        }
-
-        .dacover {
-            background-color: var(--footer-background);
-            height: 100%;
-            align-self: end;
-            z-index: 2;
-            color: white;
-            display: grid;
-            font-family: monospace;
-            grid-template-columns: 3fr 1fr;
-            line-height: .3rem;
-        }
-
-        .dacover .stats {
-            font-weight: 800;
-        }
-
-        .dacover .left .bold,
-        .dacover .right {
-            font-weight: 800;
-        }
-
-        .dacover .left,
-        .dacover .right {
-            padding: 1rem;
-            align-self: end;
-        }
-
-        .dacover .right {
-            place-self: end;
-        }
-
-        @-webkit-keyframes bubble-size {
-
-            0%,
-            75% {
-                width: var(--size, 4rem);
-                height: var(--size, 4rem);
-            }
-
-            100% {
-                width: 0rem;
-                height: 0rem;
-            }
-        }
-
-        @keyframes bubble-size {
-
-            0%,
-            75% {
-                width: var(--size, 4rem);
-                height: var(--size, 4rem);
-            }
-
-            100% {
-                width: 0rem;
-                height: 0rem;
-            }
-        }
-
-        @-webkit-keyframes bubble-move {
-            0% {
-                bottom: -4rem;
-            }
-
-            100% {
-                bottom: var(--distance, 10rem);
-            }
-        }
-
-        @keyframes bubble-move {
-            0% {
-                bottom: -4rem;
-            }
-
-            100% {
-                bottom: var(--distance, 10rem);
-            }
         }
     </style>
 
@@ -272,16 +144,6 @@
                             <span class="heading">Visibility </span><span class="visibility">0 km</span>
                         </div>
                     </div>
-                    <!-- <div class="future-predictions">
-                        <div class="day1">
-                            <div class="pred-date">01-01</div>
-                            <div class="pred-temp">12°C</div>
-                        </div>
-                        <div class="day2">
-                            <div class="pred-date">01-02</div>
-                            <div class="pred-temp">22°C</div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
@@ -300,7 +162,47 @@
                 </div>
             </div>
 
+            {% if confirmation_message %}
+            <script>
+
+                console.log("BRUAH")
+            </script>
+            <div class="gererated-text" style="opacity: 20%; padding: 1rem;">creative mode is available</div>
+            {% endif %}
+
+            <div class="woke-container">
+                <div class="woke-stuff invisible"></div>
+            </div>
+            <style>
+                .woke-container {
+                    display: grid;
+                    place-items: center;
+                    width: 100%;
+                }
+                .woke-stuff {
+                    width: 60%;
+                    opacity: 75%;
+                    /* line-height: .5rem; */
+                    padding: 1.5rem;
+                    text-align: justify;
+                }
+            </style>
+
+            <div class="file-container invisible">
+                {% if message %}
+                <p>{{ message }}</p>
+                {% endif %}
+                <form action="#" method="post" enctype="multipart/form-data" class="upload-form">
+                    <label for="fileInput" class="custom-file-upload">
+                        Choose a file
+                    </label>
+                    <input type="file" id="fileInput" name="file" accept=".txt" class="hidden-input">
+                    <button type="submit" class="upload-button">Upload</button>
+                </form>
+            </div>
+
         </div>
+
         <div class="input-field">say 'Blueberry'!</div>
     </div>
 

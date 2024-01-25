@@ -4,3 +4,5 @@ ass.js
 rough/
 fancy.css
 .vscode/
+uploads/*
+static/assets/scripts/__pycache__
