@@ -25,6 +25,9 @@
 .todo-app-title h2,
 .todo-app-title i {
     color: #BB9AF7;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
 }
 
 .todo-app-title i {
