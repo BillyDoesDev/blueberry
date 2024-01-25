@@ -4,7 +4,11 @@ import requests
 import json
 import os
 import shutil
-from static.assets.scripts import source_text
+
+try:
+    from static.assets.scripts import source_text
+except ModuleNotFoundError:
+    print("Ahh, looks like no creative mode for you :/ Check the error logs and try again")
 
 # print(source_text.parse_source_file("uploads/climate.txt", "what is climate change"))
 

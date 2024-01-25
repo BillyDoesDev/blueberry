@@ -7,6 +7,14 @@
 ### Working Demo
 https://github.com/BillyDoesDev/blueberry/assets/64155209/46efa0be-6d0b-4efb-b074-d6e671a4d8cd
 
+> **Stuff to Note:**
+> - The "creative mode" feature is still in development, and as a result, is highly unstable.
+> - Adding on to the above, a view dependencies **may require additional tools on `windows` for its proper functioning.** Thus, consult the error logs for the same. An updated `requirements.txt` file will be released later on.
+> - Fortunately, all the build tools exist by default on most Linux distros.
+> - **THE SRS DOCUMENTATION FOR THE PROJECT IS IN THE `docs/` DIRECTORY.**
+
+
+
 ### Approach
 The entire thing is designed to work on a client-server model. All the processing of the audio is done on a python backend, and the results and also the overall GUI interface is a web based one.
 
