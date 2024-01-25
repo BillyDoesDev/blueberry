@@ -4,9 +4,11 @@
 
 **Blueberry** is designed to be a virtual assistant, capable of doing the usual virtual assistant tasks, and more. 🫐
 
+### Working Demo
+https://github.com/BillyDoesDev/blueberry/assets/64155209/46efa0be-6d0b-4efb-b074-d6e671a4d8cd
+
 ### Approach
 The entire thing is designed to work on a client-server model. All the processing of the audio is done on a python backend, and the results and also the overall GUI interface is a web based one.
-
 
 **This works through a series of stages:**
 - **Stage 1:** Audio data is processed in real time `on the client side`, suing the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
