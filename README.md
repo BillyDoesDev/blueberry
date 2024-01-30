@@ -1,7 +1,7 @@
 ![blueberry.svg](static/assets/blueberry.svg)
 
 # Hello, Blueberry!
-E
+
 **Blueberry** is designed to be a virtual assistant, capable of doing the usual virtual assistant tasks, and more. 🫐
 
 ### Working Demo
