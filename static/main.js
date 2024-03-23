@@ -35,9 +35,20 @@ recognition.onresult = (event) => {
 
         const CONTAINER = document.querySelector(".container");
 
+        // const FOOTER = document.querySelector("body .footer");        
+        // FOOTER.style.setProperty("--footer-background", "#ED5565")
+
         // clear all previous operations
         for (let i = 0; i < CONTAINER.children.length; i++) {
             CONTAINER.children[i].classList.add("invisible");
+        }
+
+        // I really don't want to add so specific of a function here, but welp, it is what it is
+        try {
+            document.querySelector(".woke-stuff").classList.add("invisible");
+            console.log("we tried")
+        } catch (error) {
+            console.log("error making invisible")
         }
 
         input_field.textContent = phrase;
@@ -127,6 +138,8 @@ recognition.onresult = (event) => {
 
             // right now, all divs inside container are invisible
             document.querySelector(".file-container").classList.remove("invisible");
+
+            document.querySelector(".woke-stuf").classList.remove("invisible");
         }
 
         // else {

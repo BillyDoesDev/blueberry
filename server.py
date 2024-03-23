@@ -79,10 +79,11 @@ def handle_my_custom_event(json):
 def fetch_weather(json_data):
     print(f"recieved: {json_data}")
     phrase = str(json_data["data"]).strip()
-    if phrase.endswith("weather"):
-        location = phrase.split(" ")[0]
-    else:
-        location = phrase.split(" ")[-1]
+    # if phrase.endswith("weather"):
+    #     location = phrase.split(" ")[0]
+    # else:
+    #     location = phrase.split(" ")[-1]
+    location = phrase.split('in')[1].strip()
 
     try:
         r = requests.get(f"http://wttr.in/{location}", params={"format": "j1"})

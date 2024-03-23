@@ -49,17 +49,15 @@ python server.py
 ```
 
 **Windows:**
+
+> **NOTE:** There have been multiple issues with installing the appropriate dependencies on windows natively, so it is recommended to set it up in a WSL environment.
+
+**Start WSL:**</br>
+*Instructions on how to set up WSL can be found [here](https://learn.microsoft.com/en-us/windows/wsl/install).*
 ```shell
-git clone https://github.com/aisoc-internal-hackathon/aisoc_T9.git
-cd aisoc_T9
-
-# activate python virtual env and install dependencies
-python -m venv env
-.\env\Scripts\activate
-
-# run server and follow the generated URL to get to the frontend.
-python server.py
+wsl
 ```
+Follow the rest of the steps as usual as it is described above for Unix machines.
 
 ### Disclaimer
 > The above implementation is cross-platform, thanks to the fact that it relies on a browser based frontend. That being said, however, the **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) is currently only supported in chromium based browsers**, and this project, as a result, is heavily experimental. Expect minor glitches.</br></br>
