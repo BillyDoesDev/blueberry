@@ -6,3 +6,4 @@ fancy.css
 .vscode/
 uploads/*
 static/assets/scripts/__pycache__
+.env

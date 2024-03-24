@@ -34,6 +34,7 @@ The entire thing is designed to work on a client-server model. All the processin
 - `python 3.11.*`
 - `git`
 - A chromium based browser.
+- The `HUGGINGFACEHUB_API_TOKEN` environment variable in your system PATH.
 
 Clone the repository and `cd` into the appropriate directory
 

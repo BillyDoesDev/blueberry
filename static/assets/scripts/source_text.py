@@ -3,6 +3,11 @@ import textwrap
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain.chains.question_answering import load_qa_chain
+from langchain import HuggingFaceHub
+
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def parse_source_file(filepath:str, query:str):
@@ -33,12 +38,25 @@ def parse_source_file(filepath:str, query:str):
 
     # query = "What is love?"
     # What are relationships and love form the intricate tapestry of human connection
-    doc = db.similarity_search(query)
-    return wrap_text_preserve_newline(str(doc[0].page_content))
+    # doc = db.similarity_search(query)
+    # return wrap_text_preserve_newline(str(doc[0].page_content))
+
+    llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.8, "max_length":512})
+    chain=load_qa_chain(llm, chain_type="stuff")
+
+    the_answer = ""
+    try:
+        print("running")
+        docsResult = db.similarity_search(query)
+        the_answer = chain.run(input_documents=docsResult, question = query)
+    except Exception as e:
+        print(f"Error: {e}")
+    
+    return the_answer
 
 
 if __name__ == "__main__":
     # import os
-    ass = parse_source_file("../../../uploads/climate.txt", query="is global warming bad?")
+    ass = parse_source_file("/home/billy/what_is_love.txt", query="how to prevent global warming?")
     print("\n"*10)
     print(ass)
