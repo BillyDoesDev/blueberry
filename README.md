@@ -25,6 +25,8 @@ The entire thing is designed to work on a client-server model. All the processin
 - **Stage 4:** The result of the function is emitted to the client in real time.
 - **Stage 5:** An audio output is generated on the frontend using the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
 
+![blueberry.png](static/assets/workflow.png)
+
 
 ### Setup Instructions
 

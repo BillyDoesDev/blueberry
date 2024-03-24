@@ -48,7 +48,7 @@ recognition.onresult = (event) => {
             document.querySelector(".woke-stuff").classList.add("invisible");
             console.log("we tried")
         } catch (error) {
-            console.log("error making invisible")
+            console.log("cry about it.")
         }
 
         input_field.textContent = phrase;
