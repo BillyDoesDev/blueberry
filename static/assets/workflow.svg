@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     inkscape:zoom="0.7349537"
-     inkscape:cx="550.37481"
-     inkscape:cy="460.57323"
+     inkscape:zoom="1.0393815"
+     inkscape:cx="635.47408"
+     inkscape:cy="309.31857"
      inkscape:window-width="1920"
      inkscape:window-height="1023"
      inkscape:window-x="0"
@@ -128,13 +128,13 @@
      x="0"
      y="0"
      ry="0" /><rect
-     style="display:inline;fill:none;stroke:#848cc7;stroke-width:0.258265;stroke-linecap:round;stroke-linejoin:round"
+     style="display:inline;fill:none;stroke:#848cc7;stroke-width:0.425784;stroke-linecap:round;stroke-linejoin:round"
      id="rect2"
-     width="24.284933"
-     height="12.602714"
-     x="134.84702"
-     y="82.826241"
-     ry="2.1642535" /><rect
+     width="66.895538"
+     height="12.435194"
+     x="115.30305"
+     y="83.290398"
+     ry="2.1354854" /><rect
      style="fill:none;stroke:#848cc7;stroke-width:0.250171;stroke-linecap:round;stroke-linejoin:round"
      id="rect3"
      width="34.230305"
@@ -171,14 +171,14 @@
      ry="2.7491245" /><text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.27567px;line-height:0.9;font-family:'Hack NF';-inkscape-font-specification:'Hack NF';letter-spacing:0px;fill:none;stroke:#848cc7;stroke-width:0.313053;stroke-linecap:round;stroke-linejoin:round"
-     x="145.75847"
+     x="130.30026"
      y="90.427635"
      id="text8"><tspan
        sodipodi:role="line"
        id="tspan8"
        style="font-size:4.27567px;fill:#848cc7;stroke:none;stroke-width:0.313053"
-       x="145.75847"
-       y="90.427635">User</tspan></text><text
+       x="130.30026"
+       y="90.427635">User - Voice Input</tspan></text><text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.27567px;line-height:0.9;font-family:'Hack NF';-inkscape-font-specification:'Hack NF';letter-spacing:0px;fill:#848cc7;stroke:none;stroke-width:0.304454;stroke-linecap:round;stroke-linejoin:round"
      x="135.78699"
@@ -209,7 +209,7 @@
        style="stroke-width:0.356026"
        x="142.82677"
        y="16.777674">Browser</tspan></text><path
-     d="m 140.33889,88.800503 a 1.360755,1.360755 0 1 0 0,-2.72151 1.360755,1.360755 0 1 0 0,2.72151 z m -0.48583,0.51029 c -1.04714,0 -1.89549,0.84834 -1.89549,1.89548 0,0.17435 0.14139,0.31574 0.31574,0.31574 h 4.13116 c 0.17435,0 0.31574,-0.14139 0.31574,-0.31574 0,-1.04714 -0.84835,-1.89548 -1.89549,-1.89548 z"
+     d="m 124.88068,88.800503 a 1.360755,1.360755 0 1 0 0,-2.72151 1.360755,1.360755 0 1 0 0,2.72151 z m -0.48583,0.51029 c -1.04714,0 -1.89549,0.84834 -1.89549,1.89548 0,0.17435 0.14139,0.31574 0.31574,0.31574 h 4.13116 c 0.17435,0 0.31574,-0.14139 0.31574,-0.31574 0,-1.04714 -0.84835,-1.89548 -1.89549,-1.89548 z"
      id="path1"
      style="fill:#848cc7;fill-opacity:1;stroke-width:0.0106308" /><text
      xml:space="preserve"
@@ -233,20 +233,20 @@
      transform="matrix(0.75983115,0,0,0.75983115,57.097564,-9.4469543)"><tspan
        x="242.86139"
        y="122.16234"
-       id="tspan30"><tspan
+       id="tspan45"><tspan
          style="text-align:center;text-anchor:middle;fill:#848cc7;stroke:none"
-         id="tspan29">Text analysis
+         id="tspan27">Text analysis
 </tspan></tspan><tspan
        x="242.86139"
        y="127.1766"
-       id="tspan32"><tspan
+       id="tspan54"><tspan
          style="text-align:center;text-anchor:middle;fill:#848cc7;stroke:none"
-         id="tspan31">and output </tspan></tspan><tspan
+         id="tspan52">and output </tspan></tspan><tspan
        x="242.86139"
        y="132.19088"
-       id="tspan46"><tspan
+       id="tspan73"><tspan
          style="text-align:center;text-anchor:middle;fill:#848cc7;stroke:none"
-         id="tspan44">generation</tspan></tspan></text><path
+         id="tspan72">generation</tspan></tspan></text><path
      style="fill:#848cc7;stroke:#848cc7;stroke-width:0.334151;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;marker-end:url(#marker15)"
      d="M 260.73684,61.975866 V 76.033852"
      id="path22" /><text
@@ -769,10 +769,6 @@
      d="m 227.26686,148.13873 v -9.61191"
      id="path48"
      sodipodi:nodetypes="cc" /><path
-     style="fill:none;fill-opacity:1;stroke:#848cc7;stroke-width:0.388408;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#marker21)"
-     d="m 227.36046,128.41976 c 0,0 8.01505,-39.066572 -66.88181,-39.066572"
-     id="path37"
-     sodipodi:nodetypes="cc" /><path
      style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.388408;stroke-linecap:round;stroke-linejoin:round"
      d="m 252.94781,61.356795 v 12.672422 h -17.39742 v 30.795473 h -59.31282 v 12.25757"
      id="path49" /><path
@@ -921,69 +917,73 @@
      y="0"><tspan
        x="58.519531"
        y="190.80937"
-       id="tspan49"><tspan
+       id="tspan76"><tspan
          style="font-weight:bold;-inkscape-font-specification:'Hack NF Bold';text-align:start"
-         id="tspan47">Salient Features:</tspan><tspan
+         id="tspan74">Salient Features:</tspan><tspan
          style="text-align:start"
-         id="tspan48">
+         id="tspan75">
 </tspan></tspan><tspan
        x="58.519531"
        y="205.20937"
-       id="tspan51"><tspan
+       id="tspan78"><tspan
          style="text-align:start"
-         id="tspan50">
+         id="tspan77">
 </tspan></tspan><tspan
        x="58.519531"
        y="219.60936"
-       id="tspan55"><tspan
+       id="tspan80"><tspan
          style="text-align:start"
-         id="tspan53">- Functionalities:
+         id="tspan79">- Functionalities:
 </tspan></tspan><tspan
        x="58.519531"
        y="234.00936"
-       id="tspan57"><tspan
+       id="tspan82"><tspan
          style="text-align:start"
-         id="tspan56">  - Wake Word Recognition
+         id="tspan81">  - Wake Word Recognition
 </tspan></tspan><tspan
        x="58.519531"
        y="248.40935"
-       id="tspan59"><tspan
+       id="tspan84"><tspan
          style="text-align:start"
-         id="tspan58">  - Weather
+         id="tspan83">  - Weather
 </tspan></tspan><tspan
        x="58.519531"
        y="262.80934"
-       id="tspan61"><tspan
+       id="tspan86"><tspan
          style="text-align:start"
-         id="tspan60">  - To-Do List
+         id="tspan85">  - To-Do List
 </tspan></tspan><tspan
        x="58.519531"
        y="277.20934"
-       id="tspan63"><tspan
+       id="tspan88"><tspan
          style="text-align:start"
-         id="tspan62">  - Alarms
+         id="tspan87">  - Alarms
 </tspan></tspan><tspan
        x="58.519531"
        y="291.60933"
-       id="tspan65"><tspan
+       id="tspan90"><tspan
          style="text-align:start"
-         id="tspan64">
+         id="tspan89">
 </tspan></tspan><tspan
        x="58.519531"
        y="306.00933"
-       id="tspan67"><tspan
+       id="tspan92"><tspan
          style="text-align:start"
-         id="tspan66">- Ideation:
+         id="tspan91">- Ideation:
 </tspan></tspan><tspan
        x="58.519531"
        y="320.40932"
-       id="tspan69"><tspan
+       id="tspan94"><tspan
          style="text-align:start"
-         id="tspan68">  - Client-Server Architecture
+         id="tspan93">  - Client-Server Architecture
 </tspan></tspan><tspan
        x="58.519531"
        y="334.80931"
-       id="tspan71">  - &quot;Creative Mode&quot;<tspan
+       id="tspan96">  - &quot;Creative Mode&quot;<tspan
    style="text-anchor:middle"
-   id="tspan70">
-</tspan></tspan></text></svg>
+   id="tspan95">
+</tspan></tspan></text><path
+     style="fill:none;stroke:#848cc7;stroke-width:0.50509;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker15)"
+     d="M 227.72937,127.52632 257.91742,63.233907"
+     id="path7"
+     sodipodi:nodetypes="cc" /></svg>
