@@ -78,7 +78,7 @@ Follow the rest of the steps as usual as it is described above for Unix machines
 ### License and Open Source Information
 
 >Blueberry - your personalized AI assistant.</br>
-Copyright (C) 2024  AI Alchemists</br>
+Copyright (C) 2024  BillyDoesDev</br>
 Email: DarkKnight450@protonmail.com</br></br>
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the , or (at your option) any later version.</br></br>
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</br></br>
