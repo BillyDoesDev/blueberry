@@ -1,3 +1,7 @@
+# Blueberry - your personalized AI assistant.
+# Copyright (C) 2024 BillyDoesDev
+# Email: DarkKnight450@protonmail.com
+
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 import requests
